@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project</title>
+  <style>
+    :root {
+      --green-primary: #0f8a5f;
+      --green-accent: #16a34a;
+      --green-dark: #064e3b;
+      --white: #ffffff;
+      --text-dark: #0b2f1f;
+      --text-muted: #d0e8d0;
+      --ease: cubic-bezier(.2,.9,.3,1);
+      --max-width: 900px;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+    }
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(-45deg, #0f8a5f, #16a34a, #064e3b, #1e7e34);
+      background-size: 400% 400%;
+      animation: gradientBG 20s ease infinite;
+      color: var(--white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+      position: relative;
+      overflow-x: hidden;
+    }
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    .slides {
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      scroll-padding-top: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .slide {
+      scroll-snap-align: start;
+      min-height: 100vh;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: var(--max-width);
+      margin: 0 auto 2rem auto;
+      background: rgba(255 255 255 / 0.15);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      position: relative;
+      color: var(--white);
+      text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    }
+    h1, h2 {
+      margin-bottom: 1rem;
+      text-align: center;
+      text-shadow: 0 0 8px rgba(0,0,0,0.7);
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    p {
+      max-width: 700px;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      text-align: center;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    }
+    ul {
+      max-width: 700px;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    }
+    ul li {
+      margin-bottom: 0.7rem;
+    }
+    .slide img {
+      max-width: 100%;
+      max-height: 300px;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+      object-fit: cover;
+      border: 2px solid rgba(255 255 255 0.3);
+    }
+    .next-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 2rem;
+      background: linear-gradient(90deg, #0f8a5f, #16a34a);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s var(--ease);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      text-shadow: none;
+    }
+    .next-btn:hover {
+      background: #064e3b;
+    }
+    .contact-info {
+      max-width: 600px;
+      background: rgba(0,0,0,0.25);
+      border-radius: 15px;
+      padding: 2rem;
+      color: var(--white);
+      text-align: center;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+      text-shadow: 0 0 5px rgba(0,0,0,0.7);
+    }
+    .contact-info h2 {
+      margin-bottom: 1rem;
+    }
+    .contact-info p {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+      p, ul {
+        font-size: 1rem;
+      }
+      .slide {
+        margin-bottom: 1.5rem;
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slides" id="slides">
+
+    <!-- Slide 1 -->
+    <section class="slide" id="slide1">
+      <h1>Project sur : Test</h1>
+      <img src="" alt="Test" />
+      <p>Test.</p>
+      <button class="next-btn" data-next="slide2">Slide suivante →</button>
+    </section>
+
+    <!-- Slide 2 -->
+    <section class="slide" id="slide2">
+      <h2>Test</h2>
+      <img src="" alt="Test" />
+      <p>Test</p>
+      <ul>
+        <li>Test</li>
+        <li>Test</li>
+        <li>Test</li>
+      </ul>
+      <button class="next-btn" data-next="slide3">Slide suivante →</button>
+    </section>
+
+    <!-- Slide 3 -->
+    <section class="slide" id="slide3">
+      <h2>Test</h2>
+      <img src="" alt="Test" />
+      <p>Test :</p>
+      <ul>
+        <li>Test</li>
+        <li>Test</li>
+        <li>Test</li>
+        <li>Test</li>
+        <li>Test</li>
+        <li>Test</li>
+        <li>Test</li>
+        <li>Test</li>
+      </ul>
+      <button class="next-btn" data-next="slide4">Slide suivante →</button>
+    </section>
+
+    <!-- Slide 4 -->
+    <section class="slide" id="slide4">
+      <h2>Test</h2>
+      <img src="" alt="Test" />
+      <p>Test</p>
+      <ul>
+        <li>Test</li>
+        <li>Test</li>
+        <li>Test</li>
+      </ul>
+      <button class="next-btn" data-next="slide5">Slide suivante →</button>
+    </section>
+
+    <!-- Slide 5 -->
+    <section class="slide" id="slide5">
+      <h2>Test</h2>
+      <img src="" alt="Test" />
+      <p>Test</p>
+      <ul>
+        <li>Test</li>
+        <li>Test</li>
+        <li>Test</li>
+      </ul>
+      <button class="next-btn" data-next="slide6">Slide suivante →</button>
+    </section>
+
+    <!-- Slide 6 -->
+    <section class="slide" id="slide6">
+      <h2>Test</h2>
+      <img src="" alt="Test" />
+      <p>Test</p>
+      <ul>
+        <li>Test</li>
+        <li>Test</li>
+        <li>Test</li>
+      </ul>
+      <button class="next-btn" data-next="slide7">Slide suivante →</button>
+    </section>
+
+    <!-- Slide 7 -->
+    <section class="slide" id="slide7">
+      <h2>Test</h2>
+      <img src="" alt="Test" />
+      <p>Test</p>
+      <ul>
+        <li>Test</li>
+        <li>Test</li>
+        <li>Test</li>
+      </ul>
+      <button class="next-btn" data-next="slide8">Slide suivante →</button>
+    </section>
+    <!--test-->
+     <section class="slide" id="slide8">
+      <h2>Test</h2>
+      <img src="" alt="Test" />
+      <p>Test</p>
+      <ul>
+        <li>Test</li>
+        <li>Test</li>
+        <li>Test</li>
+      </ul>
+      <button class="next-btn" data-next="slide9">Slide suivante →</button>
+    </section>
+
+    <!-- Slide 8 - Informations personnelles et remerciements -->
+<section class="slide" id="slide9">
+  <div class="contact-info">
+    <h2>Les Informations de l équipe</h2>
+    <p><strong>Nom :</strong> Rayane El Hayani</p>
+    <p><strong>Nom :</strong> Wadie El Karkri</p>
+    <p><strong>Nom :</strong> Mohamed Chelh</p>
+    <p><strong>Nom :</strong> Mohammed Ragueb</p>
+    <p><strong>Nom :</strong> Mohammed Amine El Bakkali</p>
+    <p><strong>Ce site est programmé par:</strong> Mohammed Amine El Bakkali</p>
+  </div>
+  
+  <p style="margin-top: 2rem; font-size: 1.4rem; font-weight: 600; color: var(--white); text-shadow: 0 0 8px rgba(0,0,0,0.7); text-align: center;">
+    Merci pour votre attention !
+  </p>
+</section>
+
+  </div>
+
+  <script>
+    document.querySelectorAll('.next-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const nextId = button.getAttribute('data-next');
+        const nextSlide = document.getElementById(nextId);
+        if(nextSlide) {
+          nextSlide.scrollIntoView({behavior: 'smooth'});
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
